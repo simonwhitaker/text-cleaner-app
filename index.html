@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
-
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-    <script type="module" src="/src/renderer.ts"></script>
+    <div id="root">
+      <textarea id="input"></textarea>
+      <div id="controls">
+        <div class="control">
+          <input type="checkbox" id="sort-output" />
+          <label for="sort-output">Sort output</label>
+        </div>
+      </div>
+      <textarea id="output"></textarea>
+      <script type="module" src="/src/renderer.ts"></script>
+    </div>
   </body>
 </html>

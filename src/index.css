@@ -2,6 +2,24 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  /* max-width: 38rem; */
+  /* padding: 1rem; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+
+#controls {
+  padding: 0.5rem;
+}
+
+#input, #output {
+  flex: 1;
 }
