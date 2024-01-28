@@ -17,9 +17,14 @@ body {
 }
 
 #controls {
+  display: flex;
   padding: 0.5rem;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 #input, #output {
   flex: 1;
+  resize: none;
 }

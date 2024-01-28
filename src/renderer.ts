@@ -26,6 +26,37 @@
  * ```
  */
 
-import './index.css';
+import "./index.css";
+import { text_to_tokens } from "./utils";
 
-console.log('👋 This message is being logged by "renderer.ts", included via Vite');
+console.log(
+  '👋 This message is being logged by "renderer.ts", included via Vite'
+);
+
+// See the Electron documentation for details on how to use preload scripts:
+// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
+const input = <HTMLTextAreaElement>document.getElementById("input");
+input.addEventListener("input", generateOutput);
+const sortOutput = <HTMLInputElement>document.getElementById("sort-output");
+sortOutput.addEventListener("change", generateOutput);
+const dedupeOutput = <HTMLInputElement>document.getElementById("dedupe-output");
+dedupeOutput.addEventListener("change", generateOutput);
+
+const output = <HTMLTextAreaElement>document.getElementById("output");
+
+function generateOutput() {
+  let tokens = text_to_tokens(input.value);
+  if (sortOutput.checked) {
+    tokens.sort();
+  }
+  if (dedupeOutput.checked) {
+    const dedupedTokens: string[] = [];
+    tokens.forEach((elem) => {
+      if (!dedupedTokens.includes(elem)) {
+        dedupedTokens.push(elem);
+      }
+    });
+    tokens = dedupedTokens;
+  }
+  output.value = tokens.join("\n");
+}

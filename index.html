@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Text Cleaner</title>
   </head>
   <body>
     <div id="root">
@@ -12,8 +12,12 @@
           <input type="checkbox" id="sort-output" />
           <label for="sort-output">Sort output</label>
         </div>
+        <div class="control">
+          <input type="checkbox" id="dedupe-output" />
+          <label for="dedupe-output">De-dupe output</label>
+        </div>
       </div>
-      <textarea id="output"></textarea>
+      <textarea id="output" readonly></textarea>
       <script type="module" src="/src/renderer.ts"></script>
     </div>
   </body>
