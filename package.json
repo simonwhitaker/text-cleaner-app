@@ -1,8 +1,8 @@
 {
   "name": "text-cleaner-app",
-  "productName": "text-cleaner-app",
+  "productName": "Text Cleaner",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Cleans up text from messy data sources",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",

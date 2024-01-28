@@ -29,10 +29,6 @@
 import "./index.css";
 import { text_to_tokens } from "./utils";
 
-console.log(
-  '👋 This message is being logged by "renderer.ts", included via Vite'
-);
-
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 const input = <HTMLTextAreaElement>document.getElementById("input");
